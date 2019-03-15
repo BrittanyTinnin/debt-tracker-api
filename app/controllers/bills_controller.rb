@@ -16,8 +16,8 @@ class BillsController < ApplicationController
     end
 
     private
-        def bill_params
-            params.require().permit(:name, :phone_number, :website, :amount)
-        end
+    def bill_params
+        params.require(:bill).permit(:name, :phone_number, :website, :amount)
+    end
 
 end
