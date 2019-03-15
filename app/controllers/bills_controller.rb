@@ -11,13 +11,16 @@ class BillsController < ApplicationController
     end
 
     def create
-        bill = Bill.new(bill_params)
-        render json: bill
+        @bill = Bill.create(bill_params)
+        if @bill.save
+            render json: @bill, status: :created
+        end
     end
 
     private
     def bill_params
-        params.require(:bill).permit(:name, :phone_number, :website, :amount)
+        params.require(:bill).permit(:name, :phone_number, :website, :due_date, :amount)
     end
 
 end
+
