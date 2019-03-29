@@ -2,11 +2,11 @@ class Api::UsersController < ApplicationController
     before_action :set_user, only: [:show, :update, :destroy]
 
     def index
-
+        @users = User.all
+        render :json @users
     end
 
     def show
-
     end
 
     def create
@@ -14,11 +14,9 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-
     end
 
     def destroy
-
     end
 
     private
