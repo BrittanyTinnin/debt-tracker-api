@@ -1,5 +1,7 @@
 class BillsController < ApplicationController
 
+    # before_action :authentication_user
+
     def index
         @bills = Bill.all
         render json: @bills
