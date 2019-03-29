@@ -1,4 +1,4 @@
-class BillsController < ApplicationController
+class Api::BillsController < ApplicationController
 
     # before_action :authentication_user
 
