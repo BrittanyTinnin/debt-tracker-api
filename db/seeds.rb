@@ -9,3 +9,9 @@
 10.times do 
     Bill.create(name: Faker::Company.name, phone_number: Faker::PhoneNumber.phone_number, website: Faker::Internet.url, amount: Faker::Number.decimal(2), due_date: Faker::Date.forward(23))
 end
+
+
+user_one = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: 'test@test.com', password: '123456a')
+
+user_one.bills.create(name: 'seed data test', phone_number: Faker::PhoneNumber.phone_number, website: Faker::Internet.url, amount: Faker::Number.decimal(2), due_date: Faker::Date.forward(23))
+
