@@ -49,6 +49,9 @@ Knock.setup do |config|
   ## Default:
   # config.token_public_key = nil
 
+  config.token_secret_signature_key = -> { Rails.application.credentials.read }
+
+
   ## Exception Class
   ## ---------------
   ##
